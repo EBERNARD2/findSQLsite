@@ -1,15 +1,16 @@
-import React from 'react';
-import classNames from 'classnames';
-import { SectionTilesProps } from '../../utils/SectionProps';
-import SectionHeader from './partials/SectionHeader';
+import React from "react";
+import classNames from "classnames";
+import { SectionTilesProps } from "../../utils/SectionProps";
+import SectionHeader from "./partials/SectionHeader";
+import Image from "../elements/Image";
 
 const propTypes = {
-  ...SectionTilesProps.types
-}
+  ...SectionTilesProps.types,
+};
 
 const defaultProps = {
-  ...SectionTilesProps.defaults
-}
+  ...SectionTilesProps.defaults,
+};
 
 const Testimonial = ({
   className,
@@ -22,99 +23,154 @@ const Testimonial = ({
   pushLeft,
   ...props
 }) => {
-
   const outerClasses = classNames(
-    'testimonial section',
-    topOuterDivider && 'has-top-divider',
-    bottomOuterDivider && 'has-bottom-divider',
-    hasBgColor && 'has-bg-color',
-    invertColor && 'invert-color',
+    "testimonial section",
+    topOuterDivider && "has-top-divider",
+    bottomOuterDivider && "has-bottom-divider",
+    hasBgColor && "has-bg-color",
+    invertColor && "invert-color",
     className
   );
 
   const innerClasses = classNames(
-    'testimonial-inner section-inner',
-    topDivider && 'has-top-divider',
-    bottomDivider && 'has-bottom-divider'
+    "testimonial-inner section-inner",
+    topDivider && "has-top-divider",
+    bottomDivider && "has-bottom-divider"
   );
 
-  const tilesClasses = classNames(
-    'tiles-wrap',
-    pushLeft && 'push-left'
-  );
+  const tilesClasses = classNames("tiles-wrap", pushLeft && "push-left");
 
   const sectionHeader = {
-    title: 'Customer testimonials',
-    paragraph: 'Vitae aliquet nec ullamcorper sit amet risus nullam eget felis semper quis lectus nulla at volutpat diam ut venenatis tellus—in ornare.'
+    title: "Our Team",
   };
 
   return (
-    <section
-      {...props}
-      className={outerClasses}
-    >
-      <div className="container">
+    <section {...props} className={outerClasses}>
+      <div id="testimonial" className="container">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
           <div className={tilesClasses}>
-
-            <div className="tiles-item reveal-from-right" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
+            <div
+              className="tiles-item reveal-from-right"
+              data-reveal-delay="200"
+            >
+              <div>
+                <div>
+                  <div className="text-h1 text-color-primary fw-600 tt-u mb-8">
+                    Antonio Barcelo-Rosales
+                  </div>
+                  <Image
+                    src={require("./../../assets/images/anthony.jpg")}
+                    alt="Open"
+                    width={345}
+                    height={345}
+                  />
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Roman Level</span>
+                  <span className="testimonial-item-name text-color-high">
+                    <a href="https://www.linkedin.com/in/antonio-barcelo-rosales/">
+                      {" "}
+                      Linkedin{" "}
+                    </a>
+                  </span>
                   <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
+                  <span className="text-color-low">
+                    <a
+                      className="text-xs"
+                      href="https://github.com/anthonybarcelorosales"
+                    >
+                      GitHub
+                    </a>
                   </span>
                 </div>
               </div>
             </div>
 
             <div className="tiles-item reveal-from-bottom">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
+              <div>
+                <div>
+                  <div className="text-h1 text-color-primary fw-600 tt-u mb-8">
+                    June Culp
+                  </div>
+                  <Image
+                    src={require("./../../assets/images/june.jpg")}
+                    alt="Open"
+                    width={350}
+                    height={350}
+                  />
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Diana Rynzhuk</span>
+                  <span className="testimonial-item-name text-color-high">
+                    <a href="https://www.linkedin.com/in/juneculp/">
+                      {" "}
+                      Linkedin{" "}
+                    </a>
+                  </span>
                   <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
+                  <span className="text-color-low">
+                    <a href="https://github.com/juneculp">GitHub</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="tiles-item reveal-from-bottom">
+              <div>
+                <div>
+                  <div className="text-h1 text-color-primary fw-600 tt-u mb-8">
+                    Darren Chan
+                  </div>
+                  <Image
+                    src={require("./../../assets/images/darren.jpg")}
+                    alt="Open"
+                    width={350}
+                    height={350}
+                  />
+                </div>
+                <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
+                  <span className="testimonial-item-name text-color-high">
+                    <a href="https://www.linkedin.com/in/dbchan/"> Linkedin </a>
+                  </span>
+                  <span className="text-color-low"> / </span>
+                  <span className="text-color-low">
+                    <a href="https://github.com/DarrenChan18">GitHub</a>
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="tiles-item reveal-from-left" data-reveal-delay="200">
-              <div className="tiles-item-inner">
-                <div className="testimonial-item-content">
-                  <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum cillum dolore eu fugiat.
-                      </p>
+            <div
+              className="tiles-item reveal-from-left"
+              data-reveal-delay="200"
+            >
+              <div>
+                <div>
+                  <div className="text-h1 text-color-primary fw-600 tt-u mb-8">
+                    Estrada Bernard
+                  </div>
+                  <Image
+                    src={require("./../../assets/images/carney.jpg")}
+                    alt="Open"
+                    width={350}
+                    height={350}
+                  />
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
-                  <span className="testimonial-item-name text-color-high">Ben Stafford</span>
+                  <span className="testimonial-item-name text-color-high">
+                    <a href=""> Linkedin </a>
+                  </span>
                   <span className="text-color-low"> / </span>
-                  <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
+                  <span className="text-color-low">
+                    <a href="https://github.com/EBERNARD2">GitHub</a>
                   </span>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 Testimonial.propTypes = propTypes;
 Testimonial.defaultProps = defaultProps;
